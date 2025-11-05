@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marketing Trigger Analyzer
+
+A powerful web application that analyzes text content to identify psychological marketing triggers and persuasion techniques. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Text Analysis**: Upload text files or paste content directly
+- **Trigger Detection**: Identifies 20+ marketing triggers including:
+  - Mystery & Curiosity
+  - Scarcity & Urgency
+  - Social Proof & Authority
+  - Reciprocity & Commitment
+  - Fear & Greed
+  - Storytelling & Contrast
+  - And many more...
+- **Visual Highlighting**: Color-coded highlighting of trigger segments
+- **Detailed Analysis**: Comprehensive breakdown of detected triggers
+- **Save & Load**: Store analyzed texts for future reference
+- **Modern UI**: Clean, intuitive interface with drag-and-drop support
+
+## Marketing Triggers Included
+
+### Core Psychological Triggers
+1. **Mystery** - Don't say everything you know, create curiosity
+2. **Psychopathy Appeal** - Target high-adrenaline, low-anxiety individuals
+3. **Scarcity** - Limited time, limited quantity, creates urgency
+4. **Social Proof** - Show others are doing it, testimonials, reviews
+5. **Authority** - Expertise, credentials, certifications, experience
+6. **Reciprocity** - Give something first, free value, helpful content
+7. **Commitment & Consistency** - Get small commitments, build consistency
+8. **Liking** - Similarity, compliments, cooperation, association
+9. **Fear** - Fear of missing out, fear of loss, fear of being left behind
+10. **Greed** - More money, more success, more benefits
+
+### Advanced Triggers
+11. **Curiosity Gap** - Create information gaps that people want to fill
+12. **Urgency** - Time pressure, deadlines, immediate action required
+13. **Exclusivity** - VIP access, members-only, elite group
+14. **Storytelling** - Narrative structure, personal stories, case studies
+15. **Contrast** - Before vs after, problem vs solution, old vs new
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- **Node.js 18+** ([Download](https://nodejs.org/))
+- **npm** (comes with Node.js)
 
+### Quick Start (3 steps)
+
+1. **Clone and install:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd marketing-trigger-analyzer
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Start the app:**
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Open in browser:**
+👉 [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+That's it! The app will work immediately. You can optionally add your OpenAI API key via the web interface for enhanced analysis.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Input Text**: 
+   - Drag and drop a `.txt` file onto the upload area
+   - Or paste your text directly into the textarea
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Analyze**: Click the "Analyze Text" button to scan for marketing triggers
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Review Results**: 
+   - View color-coded highlighting of trigger segments
+   - See detailed breakdown of detected triggers
+   - Check the summary of trigger usage
 
-## Deploy on Vercel
+4. **Save Analysis**: Click "Save Analysis" to store the results for later reference
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Load Previous**: Access saved analyses from the sidebar
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How It Works
+
+The analyzer uses pattern matching and keyword detection to identify marketing triggers in text. Each trigger has:
+
+- **Keywords**: Specific words and phrases to look for
+- **Patterns**: Regular expressions for more complex matching
+- **Color Coding**: Unique colors for visual identification
+- **Examples**: Sample phrases that trigger detection
+
+## Examples
+
+Try analyzing these sample texts:
+
+**Mystery & Curiosity:**
+> "Don't say everything you know. Keep them guessing. What happens next will shock you. Behind the scenes access coming soon."
+
+**Scarcity & Urgency:**
+> "Limited time offer! Only 5 spots left. Last chance to get this exclusive deal. Expires in 24 hours. Act now!"
+
+**Social Proof & Authority:**
+> "Join 10,000+ satisfied customers. Trusted by industry leaders. 5-star reviews. Recommended by experts with 20 years of experience."
+
+## Technology Stack
+
+- **Frontend**: Next.js 15, React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **File Handling**: HTML5 File API
+- **Pattern Matching**: JavaScript Regular Expressions
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+Inspired by Tai Lopez's marketing psychology course and Robert Cialdini's "Influence: The Psychology of Persuasion".

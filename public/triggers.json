@@ -1,0 +1,154 @@
+{
+  "triggers": [
+    {
+      "id": "urgency",
+      "name": "Urgency",
+      "definition": "Encourage immediate action by emphasizing genuine time constraints or deadlines.",
+      "keywords": ["now", "today", "closing soon", "maintenant", "aujourd'hui", "expire", "dernière chance", "faites-le maintenant"],
+      "positive_examples": ["Doors close at midnight tonight.", "Faites-le maintenant, plus vous attendez..."],
+      "negative_examples": ["Spots are limited... (but no real limit exists)", "Offre limitée (sans vraie limite)"],
+      "color": "#DFAE6A",
+      "enabled": true
+    },
+    {
+      "id": "scarcity",
+      "name": "Scarcity",
+      "definition": "Create desire by limiting availability of products, services, or opportunities.",
+      "keywords": ["limited", "only", "few", "exclusive", "rare", "limité", "seulement", "peu", "exclusif", "rare", "plus que"],
+      "positive_examples": ["Only 5 spots left in this exclusive program.", "Plus que 5 places disponibles"],
+      "negative_examples": ["Limited time offer (but no real scarcity)", "Offre limitée (sans vraie rareté)"],
+      "color": "#C6A664",
+      "enabled": true
+    },
+    {
+      "id": "social_proof",
+      "name": "Social Proof",
+      "definition": "Influence behavior by showing that others are doing it or have succeeded.",
+      "keywords": ["testimonials", "reviews", "customers", "users", "join", "thousands", "millions", "proven", "déjà", "plus de", "hommes", "femmes", "personnes", "transformé"],
+      "positive_examples": ["Join 10,000+ satisfied customers.", "Cette méthode a déjà transformé la vie de plus de 500 hommes"],
+      "negative_examples": ["Fake testimonials or inflated numbers", "Témoignages fictifs ou chiffres gonflés"],
+      "color": "#0057A7",
+      "enabled": true
+    },
+    {
+      "id": "authority",
+      "name": "Authority",
+      "definition": "Establish credibility through expertise, credentials, or recognized status.",
+      "keywords": ["expert", "certified", "professional", "authority", "credentials", "experience", "specialist", "expert", "certifié", "professionnel", "autorité", "expérience"],
+      "positive_examples": ["Dr. Smith, certified nutritionist with 20 years experience.", "Expert certifié avec 20 ans d'expérience"],
+      "negative_examples": ["Fake credentials or unverified claims", "Faux diplômes ou affirmations non vérifiées"],
+      "color": "#3B82F6",
+      "enabled": true
+    },
+    {
+      "id": "reciprocity",
+      "name": "Reciprocity",
+      "definition": "Give something first to create obligation and increase likelihood of compliance.",
+      "keywords": ["free", "gift", "bonus", "complimentary", "no charge", "value", "helpful", "gratuit", "cadeau", "bonus", "gratuitement", "valeur", "utile"],
+      "positive_examples": ["Free consultation with no obligation.", "Consultation gratuite sans engagement"],
+      "negative_examples": ["Hidden strings attached to 'free' offers", "Conditions cachées aux offres 'gratuites'"],
+      "color": "#8B5CF6",
+      "enabled": true
+    },
+    {
+      "id": "commitment",
+      "name": "Commitment & Consistency",
+      "definition": "Get small commitments that lead to larger ones, leveraging people's need to be consistent.",
+      "keywords": ["commit", "consistent", "promise", "pledge", "dedication", "loyalty", "engage", "cohérent", "promesse", "engagement", "dédication", "fidélité"],
+      "positive_examples": ["Commit to your goals and see them through.", "Engagez-vous dans vos objectifs"],
+      "negative_examples": ["Forcing commitments without genuine interest", "Forcer des engagements sans intérêt réel"],
+      "color": "#06B6D4",
+      "enabled": true
+    },
+    {
+      "id": "liking",
+      "name": "Liking",
+      "definition": "Increase influence through similarity, compliments, cooperation, and positive associations.",
+      "keywords": ["like", "similar", "compliment", "cooperation", "association", "relatable", "friendly", "comme", "similaire", "compliment", "coopération", "relation", "amical"],
+      "positive_examples": ["People like you have found success with this method.", "Des personnes comme vous ont réussi avec cette méthode"],
+      "negative_examples": ["Fake compliments or forced similarity", "Faux compliments ou similarité forcée"],
+      "color": "#EC4899",
+      "enabled": true
+    },
+    {
+      "id": "fear",
+      "name": "Fear",
+      "definition": "Motivate action by highlighting potential losses, missed opportunities, or negative consequences.",
+      "keywords": ["fear", "afraid", "worry", "concern", "anxiety", "panic", "terrified", "peur", "inquiet", "préoccupé", "anxiété", "panique", "coincé", "détestez"],
+      "positive_examples": ["Don't let this opportunity pass you by.", "Ne laissez pas passer cette opportunité"],
+      "negative_examples": ["Creating false fears or panic", "Créer de fausses peurs ou panique"],
+      "color": "#DC2626",
+      "enabled": true
+    },
+    {
+      "id": "greed",
+      "name": "Greed",
+      "definition": "Appeal to desire for more money, success, benefits, or material gains.",
+      "keywords": ["money", "profit", "wealth", "rich", "success", "more", "increase", "multiply", "argent", "profit", "richesse", "riche", "succès", "plus", "augmenter"],
+      "positive_examples": ["Double your income in 90 days.", "Doublez vos revenus en 90 jours"],
+      "negative_examples": ["Unrealistic promises of wealth", "Promesses irréalistes de richesse"],
+      "color": "#F59E0B",
+      "enabled": true
+    },
+    {
+      "id": "mystery",
+      "name": "Mystery",
+      "definition": "Create curiosity and anticipation by not revealing everything at once.",
+      "keywords": ["mystery", "secret", "hidden", "reveal", "exclusive", "behind the scenes", "coming soon", "teaser", "mystère", "secret", "caché", "révéler", "exclusif", "bientôt"],
+      "positive_examples": ["Don't say everything you know.", "Ne pas tout dire"],
+      "negative_examples": ["Creating false mystery or misleading teasers", "Créer de faux mystères ou teasers trompeurs"],
+      "color": "#8B5CF6",
+      "enabled": true
+    },
+    {
+      "id": "curiosity",
+      "name": "Curiosity Gap",
+      "definition": "Create information gaps that people feel compelled to fill.",
+      "keywords": ["curious", "wonder", "discover", "reveal", "uncover", "find out", "learn", "explore", "curieux", "découvrir", "révéler", "découvrir", "apprendre", "explorer"],
+      "positive_examples": ["Are you curious about what happens next?", "Êtes-vous curieux de savoir ce qui se passe ensuite ?"],
+      "negative_examples": ["Creating false curiosity or clickbait", "Créer de fausse curiosité ou du clickbait"],
+      "color": "#7C3AED",
+      "enabled": true
+    },
+    {
+      "id": "exclusivity",
+      "name": "Exclusivity",
+      "definition": "Make people feel special by offering VIP access or membership to elite groups.",
+      "keywords": ["exclusive", "vip", "members only", "elite", "private", "invitation only", "select", "exclusif", "vip", "membres seulement", "élite", "privé", "sur invitation"],
+      "positive_examples": ["Exclusive access for VIP members only.", "Accès exclusif pour les membres VIP seulement"],
+      "negative_examples": ["Fake exclusivity or false scarcity", "Fausse exclusivité ou rareté factice"],
+      "color": "#059669",
+      "enabled": true
+    },
+    {
+      "id": "storytelling",
+      "name": "Storytelling",
+      "definition": "Use narrative structure to engage emotions and make messages memorable.",
+      "keywords": ["story", "narrative", "journey", "experience", "case study", "testimonial", "once upon", "histoire", "récit", "voyage", "expérience", "témoignage"],
+      "positive_examples": ["Let me tell you a story about success.", "Laissez-moi vous raconter une histoire de succès"],
+      "negative_examples": ["Fabricated stories or misleading narratives", "Histoires fabriquées ou récits trompeurs"],
+      "color": "#7C2D12",
+      "enabled": true
+    },
+    {
+      "id": "contrast",
+      "name": "Contrast",
+      "definition": "Highlight differences between options to make one choice more appealing.",
+      "keywords": ["before", "after", "vs", "versus", "instead", "rather than", "unlike", "different", "avant", "après", "contre", "au lieu de", "contrairement", "différent"],
+      "positive_examples": ["Before vs After: See the dramatic difference.", "Avant vs Après : voyez la différence dramatique"],
+      "negative_examples": ["Misleading comparisons or false contrasts", "Comparaisons trompeuses ou contrastes faux"],
+      "color": "#1F2937",
+      "enabled": true
+    },
+    {
+      "id": "call_to_action",
+      "name": "Call to Action",
+      "definition": "Direct instructions that tell people exactly what to do next.",
+      "keywords": ["click", "button", "action", "do", "take", "start", "begin", "cliquez", "bouton", "action", "faites", "prenez", "commencez", "démarrez"],
+      "positive_examples": ["Click here to get started now.", "Cliquez ici pour commencer maintenant"],
+      "negative_examples": ["Vague or unclear instructions", "Instructions vagues ou peu claires"],
+      "color": "#7C3AED",
+      "enabled": true
+    }
+  ]
+}
