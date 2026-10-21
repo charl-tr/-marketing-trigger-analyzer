@@ -1,124 +1,58 @@
-# Marketing Trigger Analyzer
+# Glypheur
 
-A powerful web application that analyzes text content to identify psychological marketing triggers and persuasion techniques. Built with Next.js, TypeScript, and Tailwind CSS.
+Le surligneur des métastructures. Glypheur lit un texte persuasif et rend visible son architecture :
+Big Idea, hook, douleur, mécanisme, preuve, offre, appel à l'action, transitions. Il mesure aussi
+la couverture, l'équilibre et l'ordre des blocs.
 
-## Features
+Ce dépôt est né du prototype « Prism / Marketing Trigger Analyzer ». La branche `v1-fondations`
+le reconstruit à partir de la feuille de route du document Glypheur.
 
-- **Text Analysis**: Upload text files or paste content directly
-- **Trigger Detection**: Identifies 20+ marketing triggers including:
-  - Mystery & Curiosity
-  - Scarcity & Urgency
-  - Social Proof & Authority
-  - Reciprocity & Commitment
-  - Fear & Greed
-  - Storytelling & Contrast
-  - And many more...
-- **Visual Highlighting**: Color-coded highlighting of trigger segments
-- **Detailed Analysis**: Comprehensive breakdown of detected triggers
-- **Save & Load**: Store analyzed texts for future reference
-- **Modern UI**: Clean, intuitive interface with drag-and-drop support
+## Lancer
 
-## Marketing Triggers Included
-
-### Core Psychological Triggers
-1. **Mystery** - Don't say everything you know, create curiosity
-2. **Psychopathy Appeal** - Target high-adrenaline, low-anxiety individuals
-3. **Scarcity** - Limited time, limited quantity, creates urgency
-4. **Social Proof** - Show others are doing it, testimonials, reviews
-5. **Authority** - Expertise, credentials, certifications, experience
-6. **Reciprocity** - Give something first, free value, helpful content
-7. **Commitment & Consistency** - Get small commitments, build consistency
-8. **Liking** - Similarity, compliments, cooperation, association
-9. **Fear** - Fear of missing out, fear of loss, fear of being left behind
-10. **Greed** - More money, more success, more benefits
-
-### Advanced Triggers
-11. **Curiosity Gap** - Create information gaps that people want to fill
-12. **Urgency** - Time pressure, deadlines, immediate action required
-13. **Exclusivity** - VIP access, members-only, elite group
-14. **Storytelling** - Narrative structure, personal stories, case studies
-15. **Contrast** - Before vs after, problem vs solution, old vs new
-
-## Getting Started
-
-### Prerequisites
-- **Node.js 18+** ([Download](https://nodejs.org/))
-- **npm** (comes with Node.js)
-
-### Quick Start (3 steps)
-
-1. **Clone and install:**
 ```bash
-git clone <repository-url>
-cd marketing-trigger-analyzer
 npm install
-```
-
-2. **Start the app:**
-```bash
+cp .env.example .env.local   # puis renseigner ANTHROPIC_API_KEY
 npm run dev
 ```
 
-3. **Open in browser:**
-👉 [http://localhost:3000](http://localhost:3000)
+Sans clé, l'application fonctionne avec l'exemple annoté et le surlignage manuel. Seule l'analyse
+automatique est indisponible.
 
-That's it! The app will work immediately. You can optionally add your OpenAI API key via the web interface for enhanced analysis.
+## Architecture
 
-## Usage
+| Dossier | Rôle |
+|---|---|
+| `src/domain/` | **Source de vérité.** Ontologie (types, échelles, couleurs, traits, relations, motifs), lentilles, schémas zod. Tout le reste lit ces définitions. |
+| `src/engine/` | Analyse : prompt construit depuis l'ontologie, appel Claude en sortie structurée, recalage des citations sur le texte (`align.ts`), construction de l'analyse (`build.ts`, pur). |
+| `src/metrics/` | Mesures pures : couverture, équilibre macro/micro/liants, séquence comparée à l'ordre canonique, boucles. |
+| `src/lib/` | Emboîtement des passages pour l'affichage, persistance locale, export. |
+| `src/components/` | Atelier, lecteur, Codex, frise, tablette, glyphes. |
+| `src/examples/` | Textes de référence annotés (démonstration et tests de bout en bout). |
 
-1. **Input Text**: 
-   - Drag and drop a `.txt` file onto the upload area
-   - Or paste your text directly into the textarea
+Principes :
 
-2. **Analyze**: Click the "Analyze Text" button to scan for marketing triggers
+- **Le modèle cite, le serveur positionne.** Claude renvoie des extraits exacts, et `align.ts` les recale
+  sur le texte (guillemets, tirets et espaces normalisés). Une citation introuvable est écartée et comptée.
+- **Une lentille = une entrée de `LENSES`.** Ajouter Blair Warren ou Schwartz ne demande ni nouvelle
+  route ni nouvel écran.
+- **Un format d'échange versionné** (`glypheur.analysis/1`) : le même JSON sort de l'API, de l'export
+  et, plus tard, de l'API publique.
+- **La persistance passe par `lib/storage.ts`** (localStorage en v1). Brancher des comptes (Supabase)
+  ne touche que ce fichier.
 
-3. **Review Results**: 
-   - View color-coded highlighting of trigger segments
-   - See detailed breakdown of detected triggers
-   - Check the summary of trigger usage
+## Feuille de route
 
-4. **Save Analysis**: Click "Save Analysis" to store the results for later reference
+- [x] **v1** : surlignage assisté (IA + manuel), légende, mesures, vue tablette, export JSON et PDF.
+- [ ] **v2** : suggestions automatiques avec curseurs de confiance par type, et validation ou rejet en un geste.
+- [ ] **v3** : Dojo (exercices de reconnaissance sur la bibliothèque d'exemples).
+- [ ] **v4** : API publique et plugin (Google Docs / navigateur).
+- [ ] **v5** : comptes, partage, analytics d'équipe.
 
-5. **Load Previous**: Access saved analyses from the sidebar
+## Vérifier
 
-## How It Works
-
-The analyzer uses pattern matching and keyword detection to identify marketing triggers in text. Each trigger has:
-
-- **Keywords**: Specific words and phrases to look for
-- **Patterns**: Regular expressions for more complex matching
-- **Color Coding**: Unique colors for visual identification
-- **Examples**: Sample phrases that trigger detection
-
-## Examples
-
-Try analyzing these sample texts:
-
-**Mystery & Curiosity:**
-> "Don't say everything you know. Keep them guessing. What happens next will shock you. Behind the scenes access coming soon."
-
-**Scarcity & Urgency:**
-> "Limited time offer! Only 5 spots left. Last chance to get this exclusive deal. Expires in 24 hours. Act now!"
-
-**Social Proof & Authority:**
-> "Join 10,000+ satisfied customers. Trusted by industry leaders. 5-star reviews. Recommended by experts with 20 years of experience."
-
-## Technology Stack
-
-- **Frontend**: Next.js 15, React 18, TypeScript
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
-- **File Handling**: HTML5 File API
-- **Pattern Matching**: JavaScript Regular Expressions
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-Inspired by Tai Lopez's marketing psychology course and Robert Cialdini's "Influence: The Psychology of Persuasion".
+```bash
+npm test          # vitest : alignement, emboîtement, mesures, exemple de bout en bout
+npm run typecheck
+npm run lint
+npm run build
+```
